@@ -76,8 +76,8 @@ iframe {width:100%; aspect-ratio:16/9; border:none; border-radius:8px;}
   // 1. Load sql.js
   const SQL = await initSqlJs({locateFile: f => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${f}`});
 
-  // 2. Fetch the SQLite database (make sure words.db is in the same folder)
-  const dbResp = await fetch('words.db');
+  // 2. Fetch the SQLite database
+  const dbResp = await fetch('simp_EN_course.sqlite3');
   const dbBuffer = await dbResp.arrayBuffer();
   const db = new SQL.Database(new Uint8Array(dbBuffer));
 
